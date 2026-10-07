@@ -1,0 +1,31 @@
+﻿@model BookManagerApp.Models.Book
+
+@{
+    ViewData["Title"] = "Chi tiết sách";
+}
+
+<h2>Chi Tiết Sách</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Title)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Title)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Author)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Author)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Genre)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Genre)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Price)</dt>
+        <dd class="col-sm-9">@Model.Price.ToString("N0") VNĐ</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PublicationYear)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PublicationYear)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Sửa</a>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</div>
